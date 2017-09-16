@@ -1,0 +1,10 @@
+*.ui.autosave
+*.pro.user
+*.cpp.autosave
+*.h.autosave
+*.pri
+*.sh
+/Release/
+/Debug/
+
+
