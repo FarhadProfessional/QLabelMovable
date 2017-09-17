@@ -18,19 +18,23 @@ MainApp::~MainApp()
 
 void MainApp::mousePressEvent(QMouseEvent *event)
 {
-    current = event->pos();
+    //current = event->pos();
 }
 
 void MainApp::mouseMoveEvent(QMouseEvent *event)
 {
     if(pressed)
+    {
         this->move(mapToParent(event->pos() - current));
+    }
 }
 
 bool MainApp::eventFilter(QObject *object, QEvent *event)
 {
     if (object == ui->label && event->type() == QEvent::MouseButtonPress)
     {
+        current.setX(ui->label->x()+50);
+        current.setY(ui->label->y()+70);
         pressed = true;
         return true;
     }
